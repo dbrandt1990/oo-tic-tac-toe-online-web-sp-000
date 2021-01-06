@@ -117,7 +117,7 @@ def turn
 end
 
 def won?
-  WIN_COMBINATIONS.each do |combo|
+  WIN_COMBINATIONS.each { |combo|
     space1 = combo[0]
     space2 = combo[1]
     space3 = combo[2]
@@ -129,7 +129,7 @@ def won?
     elsif space1 == "O" && space2 == "O" && space3 == "O"
       return combo
     end
-  end
+  }
   false
 end
  
