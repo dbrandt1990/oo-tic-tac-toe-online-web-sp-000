@@ -146,6 +146,6 @@ end
  end
  
  def winner
-   won? ? current_player : false
+   won? ? won?[0] : false
  end
 end
