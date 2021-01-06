@@ -150,4 +150,7 @@ end
    won? ? @board[won?[0]] : nil
  end
  
+ def play 
+   puts 
+ end
 end
