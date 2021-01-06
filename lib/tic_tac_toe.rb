@@ -136,6 +136,6 @@ end
  end
  
  def draw?
-   @board.full? && !won? ? true : false
+   full? && won? == false ? true : false
  end
 end
