@@ -146,6 +146,6 @@ end
  end
  
  def winner
-   won? {return @board.current_player}
+  if won? {return @board.current_player}
  end
 end
