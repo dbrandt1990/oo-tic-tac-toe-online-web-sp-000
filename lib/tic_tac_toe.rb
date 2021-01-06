@@ -140,4 +140,6 @@ end
  def draw?
    full? && !(won?) ? true : false
  end
+ 
+ 
 end
