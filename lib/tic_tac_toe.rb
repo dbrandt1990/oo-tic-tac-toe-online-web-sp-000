@@ -151,6 +151,6 @@ end
  end
  
  def play 
-   puts 
+   turn
  end
 end
