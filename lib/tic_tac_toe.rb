@@ -122,9 +122,11 @@ def won?
     space2 = combo[1]
     space3 = combo[2]
     
-    if space1 == "X" && space2 == "X" && space3 == "X"
+    tokens = @board.values_at(space1,space2,space3)
+    
+    if tokens.all?("X")
       return combo
-    elsif space1 == "O" && space2 == "O" && space3 == "O"
+    elsif tokens.all?("O")
       return combo
     end
   }
