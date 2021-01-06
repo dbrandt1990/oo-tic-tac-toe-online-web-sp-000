@@ -124,7 +124,7 @@ def won?
     
     tokens = @board.values_at(space1,space2,space3)
     
-    count = tokens.count {|space| space == "x" || tokens.count {|space| space == "O" }
+    count = tokens.count {|space| space == "x" || space == "O" }
     if count == 3 
       return combo.join(",")
     end
