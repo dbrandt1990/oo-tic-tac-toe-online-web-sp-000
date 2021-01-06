@@ -154,5 +154,6 @@ end
  while !(over?) do
    turn
  end
+ puts "Congratulations, #{winner}!"
  end
 end
