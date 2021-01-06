@@ -124,9 +124,7 @@ def won?
     
     tokens = @board.values_at(space1,space2,space3)
     
-    if tokens.each {} 
-      return combo 
-    end
+    
   end
   false
 end
