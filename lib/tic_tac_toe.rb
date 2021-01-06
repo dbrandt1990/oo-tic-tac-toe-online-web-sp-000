@@ -146,6 +146,6 @@ end
  end
  
  def winner
-   won? return current_player
+   won? {return current_player}
  end
 end
