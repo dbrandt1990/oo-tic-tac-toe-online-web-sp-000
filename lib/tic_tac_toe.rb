@@ -152,5 +152,6 @@ end
  
  def play 
    turn
+   won?
  end
 end
