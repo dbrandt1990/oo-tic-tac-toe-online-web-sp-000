@@ -129,6 +129,7 @@ def won?
       return combo
     end
   end
+  false
 end
  
  def full?
