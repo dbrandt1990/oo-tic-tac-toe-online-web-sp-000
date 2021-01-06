@@ -137,6 +137,6 @@ end
  end
  
  def draw?
-   full? && won? == false ? true : false
+   full? && !(won?) ? true : false
  end
 end
