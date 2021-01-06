@@ -134,4 +134,8 @@ end
  def full?
    @board.any?(" ") ? false : true
  end
+ 
+ def draw?
+   @board.full? && won?
+ end
 end
