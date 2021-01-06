@@ -146,6 +146,6 @@ end
  end
  
  def winner
-   won? ? won?[0] : false
+   won? ? won?[1] : false
  end
 end
