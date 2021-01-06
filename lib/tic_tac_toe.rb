@@ -124,7 +124,7 @@ def won?
     
     tokens = @board.values_at(space1,space2,space3)
     
-    puts tokens.all?("X" || "O")
+    if tokens.all?(current_player) { return combo }
   end
   false
 end
