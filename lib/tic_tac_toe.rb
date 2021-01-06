@@ -122,8 +122,6 @@ def won?
     space2 = combo[1]
     space3 = combo[2]
     
-    tokens = @board.values_at(space1,space2,space3)
-    
     if space1 == "X" && space2 == "X" && space3 == "X"
       return combo
     elsif space1 == "O" && space2 == "O" && space3 == "O"
