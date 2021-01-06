@@ -1,0 +1,137 @@
+# class TicTacToe
+#   attr_reader :board
+#   WIN_COMBINATIONS = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+  
+#   def initialize(board = nil)
+#     @board = Array.new(9," ")
+#   end
+  
+#   def display_board 
+#     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "  
+#     puts "------------"
+#     puts " #{@board[3]} | #{@board[4]} | #{@board[5]} " 
+#     puts "------------"
+#     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} " 
+#   end
+  
+#   def input_to_index(input)
+#     index = input.to_i - 1
+#     return index
+#   end
+  
+#   def move(index, current_player = "X")
+#     @board[index] = current_player
+#   end
+  
+#   def position_taken?(index)
+#     @board[index] == " " ? false : true
+#   end
+  
+#   def valid_move?(index)
+    
+#     position_taken?(index) == true || !@board[index] ? false : true
+    
+#   end
+  
+#   def turn_count
+#   return @board.count {|space| space  != " "}
+#   end
+
+# def current_player
+#   turn_count % 2 == 0 ? "X" : "O"
+# end
+
+# def turn
+#   puts "Please choose a number 1-9:"
+#   user_input = gets.strip
+#   index = input_to_index(user_input)
+#   if valid_move?(index)
+#     move(index, current_player)
+#     display_board
+#   else
+#     "Invalid move, try again."
+#     turn
+#   end
+#   end
+# end
+
+class TicTacToe
+
+  WIN_COMBINATIONS = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [6, 4, 2]
+  ]
+
+def initialize
+  @board = Array.new(9, " ")
+end
+
+def display_board
+  puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
+  puts "-----------"
+  puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
+  puts "-----------"
+  puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
+end
+
+def input_to_index(user_input)
+  user_input.to_i - 1
+end
+
+def move(index, current_player = "X")
+  @board[index] = current_player
+end
+
+def position_taken?(index)
+  !(@board[index].nil? || @board[index] == " ")
+end
+
+def valid_move?(index)
+  index.between?(0,8) && !position_taken?(index)
+end
+
+def turn_count
+  @board.count {|space| space != " "}
+end
+
+def current_player
+  turn_count % 2 == 0 ? "X" : "O"
+end
+
+def turn
+  puts "Please choose a number 1-9:"
+  user_input = gets.strip
+  index = input_to_index(user_input)
+  if valid_move?(index)
+    move(index, current_player)
+    display_board
+  else
+    turn
+  end
+end
+
+def won?
+  WIN_COMBINATIONS.each do |combo|
+    space1 = combo[0]
+    space2 = combo[1]
+    space3 = combo[2]
+    
+    tokens = @board.values_at(space1,space2,space3)
+    
+    count = tokens.count {|space| space == current_player}
+    if count == 3 
+      return combo
+    end
+  end
+end
+ 
+ def full?
+   @board.any?(" ") ? false : true
+ end
+end
