@@ -124,7 +124,11 @@ def won?
     
     tokens = @board.values_at(space1,space2,space3)
     
-    
+    if space1 == "X" && space2 == "X" && space3 == "X"
+      return combo
+    elsif space1 == "O" && space2 == "O" && space3 == "O"
+      return combo
+    end
   end
   false
 end
