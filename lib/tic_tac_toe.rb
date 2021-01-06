@@ -154,6 +154,7 @@ end
  while !(over?) do
    turn
  end
- puts "Congratulations #{winner}!"
+ 
+ draw?  ? puts("Cat's Game!") : puts ("Congratulations #{winner}!")
  end
 end
