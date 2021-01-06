@@ -153,5 +153,6 @@ end
  def play 
    turn
    over?
+   won?
  end
 end
