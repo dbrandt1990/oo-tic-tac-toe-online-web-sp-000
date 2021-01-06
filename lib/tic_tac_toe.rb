@@ -144,4 +144,8 @@ end
  def over?
    won? || draw? ? true : false
  end
+ 
+ def winner
+   won? return current_player
+ end
 end
