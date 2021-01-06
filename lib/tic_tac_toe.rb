@@ -154,7 +154,6 @@ end
  while !(over?) do
    turn
  end
- 
  draw?  ? (puts "Cat's Game!") : (puts "Congratulations #{winner}!")
  end
 end
