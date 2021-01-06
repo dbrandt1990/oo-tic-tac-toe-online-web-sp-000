@@ -146,6 +146,8 @@ end
  end
  
  def winner
+   #check board index directley, current_player variable will not be true 
    won? ? @board[won?[0]] : nil
  end
+ 
 end
