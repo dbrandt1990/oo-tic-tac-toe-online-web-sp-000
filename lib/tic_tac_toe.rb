@@ -126,7 +126,7 @@ def won?
     
     count = tokens.count {|space| space == current_player}
     if count == 3 
-      return combo
+      return combo.join(",")
     end
   end
   false
