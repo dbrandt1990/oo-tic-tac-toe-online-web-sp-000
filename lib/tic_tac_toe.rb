@@ -146,6 +146,6 @@ end
  end
  
  def winner
-   won? ? won?[1] : false
+   won? ? @board[won?[0]] : false
  end
 end
