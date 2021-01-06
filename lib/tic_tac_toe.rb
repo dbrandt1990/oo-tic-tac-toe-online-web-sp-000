@@ -146,6 +146,6 @@ end
  end
  
  def winner
-   won? ? @board.current_player : false
+   won? ? current_player : false
  end
 end
