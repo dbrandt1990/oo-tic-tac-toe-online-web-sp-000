@@ -151,8 +151,8 @@ end
  end
  
  def play 
+ while !(over?) do
    turn
-   over?
-   won?
+ end
  end
 end
