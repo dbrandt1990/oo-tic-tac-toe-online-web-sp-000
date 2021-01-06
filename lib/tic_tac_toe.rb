@@ -125,7 +125,7 @@ def won?
     tokens = @board.values_at(space1,space2,space3)
     
     count = tokens.count {|space| space == "x" || space == "O" }
-    puts tokens.uniq
+    puts tokens.all?(current_player)
   end
   false
 end
